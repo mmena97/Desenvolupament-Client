@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<p>a) Introduzca la longitud lateral de un cuadrado e imprima su perímetro.</p>
+		<button  onclick="acta()">Click</button>
+		<p>b) Introduzca cuatro números e imprima la suma y el producto de los mismos.</p>
+		<button  onclick="actb()">Click</button>
+		<p>c) Introduzca el precio y la cantidad de dos productos e imprima la factura.</p>
+		<button  onclick="actc()">Click</button>
+		<p>d) Introduzca la base y la altura de un triángulo e imprima su área.</p>
+		<button  onclick="actd()">Click</button>
+		<script>
+			function acta(){
+				long = prompt("Dame la longitud del cuadrado");
+				perimetro = 4*long;
+				alert("El perímetro del cuadrado es "+perimetro);
+			}
+			function actb(){
+				num1 = prompt("Dame cutro numeros:");
+				num2 = prompt("");
+				num3 = prompt("");
+				num4 = prompt("");
+				suma = parseInt(num1)+parseInt(num2)+parseInt(num3)+parseInt(num4);
+				producto = num1*num2*num3*num4
+				alert("La suma es "+suma+" y el producto es "+producto );
+			}
+			function actc(){
+				precio1 = prompt("Dame el precio:");
+				cantidad1 = prompt("¿Que cantidad? :");
+				precio2 = prompt("Dame el precio:");
+				cantidad2 = prompt("¿Que cantidad? :");
+				total1 = parseInt(precio1)*parseInt(cantidad1);
+				total2 = parseInt(precio2)*parseInt(cantidad2);
+				alert("Factura\nProducto 1 = "+total1+"€\nProducto 2 = "+total2+"€");
+			}
+			function actd(){
+				base = prompt("Dame la base del triangulo: ");
+				altura = prompt("Dame la altura del triangulo: ")
+				area = parseInt(base)*parseInt(altura);
+				alert("El area del triangulo es "+area);
+			}
+		</script>
+	</body>
+</html>

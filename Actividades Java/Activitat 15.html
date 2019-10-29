@@ -1,0 +1,19 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>a) Show the recent term (1st, 2nd, 3rd or 4th).</p>
+		<p id="soluciona"></p>
+		<button onclick="acta()">Click</button>
+		<script>
+			function acta(){
+				var d = new Date();
+				var dia = d.etDate(1);
+				document.getElementById("soluciona").innerHTML = "Dia : "+dia;
+			}
+		</script>
+	</body>
+</html>

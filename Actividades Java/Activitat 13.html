@@ -1,0 +1,122 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>a) Recibe tres números y devuelve el mínimo.</p>
+		<input  name="PrimerNumero" id="Anum1">
+		<input  name="SergundoNumero" id="Anum2">
+		<input  name="TercerNumero" id="Anum3">
+		<p id="soluciona"></p>
+		<button  onclick="acta()">Click</button>
+		<p>b) Recibe tres números y los imprime en orden ascendente.</p>
+		<input  name="PrimerNumero" id="Bnum1">
+		<input  name="SergundoNumero" id="Bnum2">
+		<input  name="TercerNumero" id="Bnum3">
+		<p id="solucionb"></p>
+		<button  onclick="actb()">Click</button>
+		<p>c) Recibe el lado de un cuadrado y devuelve su perímetro.</p>
+		<input  name="lado" id="lad">
+		<p id="solucionc"></p>
+		<button  onclick="actc()">Click</button>
+		<p>d) Recibe un número y devuelve cuántos dígitos tiene.</p>
+		<input name="digitos" id="dig">
+		<p id="soluciond"></p>
+		<button  onclick="actd()">Click</button>
+		<p>e) Recibe tres números y devuelve el promedio.</p>
+		<input  name="PrimerNumero" id="Enum1">
+		<input  name="SergundoNumero" id="Enum2">
+		<input  name="TercerNumero" id="Enum3">
+		<p id="solucione"></p>
+		<button  onclick="acte()">Click</button>
+		<p>f) Ingresemos cinco números y devuelva la suma.</p>
+		<input  name="PrimerNumero" id="Fnum1">
+		<input  name="SergundoNumero" id="Fnum2">
+		<input  name="TercerNumero" id="Fnum3">
+		<input  name="CuartoNumero" id="Fnum4">
+		<input  name="QuintoNumero" id="Fnum5">
+		<p id="solucionf"></p>
+		<button  onclick="actf()">Click</button>
+		<script>
+			function acta(){
+				a = parseInt(document.getElementById("Anum1").value)
+				b = parseInt(document.getElementById("Anum2").value)
+				c = parseInt(document.getElementById("Anum3").value)
+				x = 0;
+				if(a<b && a<c){
+					x =  parseInt(document.getElementById("Anum1").value)
+				}else if(b<a && b<c){
+					x = parseInt(document.getElementById("Anum2").value)
+				}else{
+					x = parseInt(document.getElementById("Anum3").value)
+				}
+				document.getElementById("soluciona").innerHTML = "Minimo : "+x;
+			}
+			/*function actb(){
+				a = parseInt(document.getElementById("Bnum1").value)
+				b = parseInt(document.getElementById("Bnum2").value)
+				c = parseInt(document.getElementById("Bnum3").value)
+				if(a>b && a>c){
+					document.getElementById("solucionb").innerHTML = a;
+					if(b>c){
+						document.getElementById("solucionb").innerHTML = b;
+						document.getElementById("solucionb").innerHTML = c;
+					}else{
+						document.getElementById("solucionb").innerHTML = c;
+						document.getElementById("solucionb").innerHTML = b;
+					}
+				}else if(b>a && b>c){
+					document.getElementById("solucionb").innerHTML = b;
+					if(a>c){
+						document.getElementById("solucionb").innerHTML = a;
+						document.getElementById("solucionb").innerHTML = c;
+					}else{
+						document.getElementById("solucionb").innerHTML = c;
+						document.getElementById("solucionb").innerHTML = a;
+					}
+				}else{
+					document.getElementById("solucionb").innerHTML = c;
+					if(a>b){
+						document.getElementById("solucionb").innerHTML = a;
+						document.getElementById("solucionb").innerHTML = b;
+					}else{
+						document.getElementById("solucionb").innerHTML = b;
+						document.getElementById("solucionb").innerHTML = a;
+					}
+				}
+			}*/
+			function actc(){
+				perimetro = parseInt(document.getElementById("lad").value)*4;
+				document.getElementById("solucionc").innerHTML = "Perimetro : "+perimetro;
+			}
+			function actd(){
+				numero = parseInt(document.getElementById("dig").value);
+				contador = 1;
+				control = 10;
+				while (control <= numero){
+					contador++;
+					control = control * 10;
+				}
+				document.getElementById("soluciond").innerHTML = "Digitos : "+contador;
+			}
+			function acte(){
+				a = parseInt(document.getElementById("Enum1").value)
+				b = parseInt(document.getElementById("Enum2").value)
+				c = parseInt(document.getElementById("Enum3").value)
+				promedio = (a+b+c)/3
+				document.getElementById("solucione").innerHTML = "Promedio : "+promedio;
+			}
+			function actf(){
+				a = parseInt(document.getElementById("Fnum1").value)
+				b = parseInt(document.getElementById("Fnum2").value)
+				c = parseInt(document.getElementById("Fnum3").value)
+				d = parseInt(document.getElementById("Fnum4").value)
+				e = parseInt(document.getElementById("Fnum5").value)
+				suma = a+b+c+d+e
+				document.getElementById("solucionf").innerHTML = "Suma : "+suma;
+			}
+		</script>
+	</body>
+</html>

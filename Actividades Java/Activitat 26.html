@@ -1,0 +1,22 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		Usuario : <input type="text" id="usur">
+		<p></p>
+		Contrasena : <input type="text" id="contr" onblur="comprobarContra()">
+		<script>
+			function comprobarContra() {
+			  var x = document.getElementById("contr");
+			  y = x.value.toString();
+			  if(y.length<7){
+			  	alert("Muy corto");
+			  }else if(y.length>20)
+			 	 alert("Demasiado Largo");
+			}
+		</script>
+	</body>
+</html>

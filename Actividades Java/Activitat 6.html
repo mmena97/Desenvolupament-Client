@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Titulo</title>
+	</head>
+	<body>
+		<p>a) Introduzca dos números N1 y N2, si el primero es mayor que el segundo, imprime la etiqueta
+		adición N1+N2, de lo contrario imprime la diferencia N2-N1.</p>
+		<button  onclick="acta()">Click</button>
+		<p>b) Introduzca tres notas de un estudiante, si el promedio es mayor o igual a 5 entonces un mensaje "Has pasado!!".
+		en caso contrario, debe aparecer el mensaje "Has suspendido!</p>
+		<button  onclick="actb()">Click</button>
+		<p>c) Introduzca un número entero y, si el número es un par, deberá aparecer el mensaje "Número de par",
+		en caso contrario, deberá aparecer el mensaje "Número impar".</p>
+		<button  onclick="actc()">Click</button>
+		<p>d) Introduzca la edad de una persona y, si la edad está comprendida entre los 18 y los 65 años, el mensaje "Edad de trabajo"en caso contrario, debe aparecer el mensaje "No se ha alcanzado la edad de trabajar".</p>
+		<button  onclick="actd()">Click</button>
+		<script>
+			function acta(){
+				num1 = prompt("Introduce el primer numero:");
+				num2 = prompt("Introduce el segundo numero:");
+				if(num1>num2){
+					alert(parseInt(num1)+parseInt(num2));
+				}else{
+					alert(parseInt(num2)-parseInt(num1));
+				}
+			}
+			function actb(){
+				num1 = prompt("Dame la primera nota: ");
+				num2 = prompt("Dame la segunda nota: ");
+				num3 = prompt("Dame la tercera nota: ");
+				if ((parseInt(num1)+parseInt(num2)+parseInt(num3))/3>=5) {
+					alert("Has pasado!");
+				}else{
+					alert("Has suspendido!");
+				}
+			}
+			function actc(){
+				numero = prompt("Introduce un numero: ");
+				if (numero % 2 == 0) {
+			        alert ("Número par");
+			    }else{
+			    	alert ("Número impar");
+			    }
+			}
+			function actd(){
+				edad = prompt("Introduce tu edad: ");
+				if (edad>=18 && edad<65){
+					alert("Usted está en edad de trabajar");
+				}else{
+					alert("No se ha alcanzado la edad de trabajar");
+				}
+			}
+
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>Introduce los datos:</p>
+		<p></p>
+		Nombre:<br><textarea id="nombre"></textarea>
+		<p></p>
+		Correo:<br><textarea id="correo"></textarea>
+		<p></p>
+		Comentarios:<br><textarea id="comentarios"></textarea>
+		<p></p>
+		<button onclick="mostrarDatos()">Mostrar los datos</button>
+		<script>
+			function mostrarDatos(){
+				var nom = document.getElementById("nombre").value;
+				var cor = document.getElementById("correo").value;
+				var com = document.getElementById("comentarios").value;
+				alert("Nombre Usuario : "+nom+"\nCorreo : "+cor+"\n Comentarios : "+com);
+			}
+		</script>
+	</body>
+</html>

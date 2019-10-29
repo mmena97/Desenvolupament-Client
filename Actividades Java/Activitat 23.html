@@ -1,0 +1,32 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h1>Selecciona un deporte</h1>
+		<p></p>	
+		Futbol: <input type="checkbox" id="fut">
+		Tennis: <input type="checkbox" id="ten">
+		Karate: <input type="checkbox" id="kar">
+		<p></p>	
+		<button onclick="comprobar()">Comprobar</button>
+	<script>
+		function comprobar() {
+			resul ="Los deportes seleccionados son : ";
+			if (document.getElementById("fut").checked == true){
+				resul+="Futbol ";
+		  	} 
+		  	if (document.getElementById("ten").checked == true){
+				resul+="Tennis ";
+		  	}
+		  	if (document.getElementById("kar").checked == true){
+				resul+="Karate ";
+		  	}
+		  	alert(resul);
+		}
+	</script>
+
+	</body>
+</html>

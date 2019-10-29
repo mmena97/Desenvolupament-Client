@@ -1,0 +1,50 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body onload="acta();">
+		<p>a) Crear una clase llamada Addition con 2 atributos (valeu1 y value2) y tres métodos
+		(loadValue1, loadValue2 y resultado). Pruebe esta clase para hacer algunas adiciones.</p>
+		<p>Numero 1 <input  name="numero1" id="num1"><button onclick="loadValue1()">Cargar</button></p>
+		<p>Numero 2 <input  name="numero2" id="num2"><button onclick="loadValue2()">Cargar</button></p>
+		<p id="soluciona"></p>
+		<button onclick="resultado()">Click</button>
+		<p>b) Crear una clase llamada Persona (nombre y edad), una clase llamada Compañía (nombre y edad máxima)
+		trabajadores). Escribe un guión para crear 2 trabajadores y 1 empresa. Muestre cuánta gente es capaz de
+		en esta compañía.</p>
+		<button onclick="actb()">Click</button>
+		<script>
+			function acta(){
+				Addition = {value1:"",value2:""}
+			}
+			function loadValue1(Addition){
+				this.value1 = parseInt(document.getElementById("num1").value)
+			}
+			function loadValue2(Addition){
+				this.value2 = parseInt(document.getElementById("num2").value)
+			}
+			function resultado(Addition){
+				x = parseInt(this.value1)+parseInt(this.value2);
+				document.getElementById("soluciona").innerHTML = "Resultado : "+x;
+			}
+			///////////////////////////////////////////////////////////////
+			function actb(){
+				persona = new Object();
+				compañia = new Object();
+				crearPersona(persona);
+				crearPersona(persona);
+				crearCompañia(compañia);
+			}
+			function crearPersona(persona){
+				this.nombre = prompt("Introduce el nombre : ");
+				this.edad = prompt("Introduce la edad : ");
+			}
+			function crearCompañia(compañia){
+				this.nombre = prompt("Introduce el nombre : ");
+				this.edadTop = prompt("Introduce la edad maxima : ");
+			}
+		</script>
+	</body>
+</html>

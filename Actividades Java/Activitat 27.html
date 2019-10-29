@@ -1,0 +1,37 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			table, td {
+			  border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<p>TABLA</p>
+		<table id="tabla">
+			<tr id="fila 1" onmouseover="grande(this)" onmouseout="normal(this)">
+			    <td>Nombre</td>
+			    <td>Miguel</td>
+			    <td>Maria</td>
+		  	</tr>
+		  	<tr id="fila2" onmouseover="grande(this)" onmouseout="normal(this)">
+			    <td>Edad</td>
+			    <td>18</td>
+			    <td>20</td>
+		  	</tr>
+		</table>
+		<script>
+			function grande(x) {
+			  x.style.height = "64px";
+			  x.style.background ="red";
+			}
+
+			function normal(x) {
+			  x.style.height = "32px";
+			   x.style.background ="white";
+			}
+		</script>
+	</body>
+</html>

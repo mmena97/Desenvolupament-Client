@@ -1,0 +1,171 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>a) Imprimir los números del 1 al 50. A continuación, imprima los números del 50 al 1. Y finalmente imprimir el números del -50 al 0.</p>
+		<button  onclick="acta()">Click</button>
+		<p>b) Imprimir los números de par del 2 al 100 (2, 4, 6, ...98, 100).</p>
+		<button  onclick="actb()">Click</button>
+		<p>c) Imprimir 25 números de la serie 11, 22, 33, 44....</p>
+		<button  onclick="actc()">Click</button>
+		<p>d) Imprimir los 7 múltiplos de 7 a 70 (7, 14, 21, ...., 63, 70).</p>
+		<button  onclick="actd()">Click</button>
+		<p>e) Ingresa 10 notas de estudiantes y luego imprime cuántos estudiantes han aprobado y cuántos estudiantes han fracasado.</p>
+		<button  onclick="acte()">Click</button>
+		<p>f) Introduzca la altura de 5 personas y luego imprima la altura media.</p>
+		<button  onclick="actf()">Click</button>
+		<p>g) Ingresar 5 salarios de trabajadores en una empresa, y luego imprimir cuántos salarios de trabajadores hay entre500€ y 1000€, cuántos salarios de los trabajadores son superiores a 1000€ y la suma de todos los salarios.</p>
+		<button  onclick="actg()">Click</button>
+		<p>h) Introduzca 2 listas de 3 números cada una, e imprima la lista que tenga una suma mayor. Puede utilizar dos o
+		mas estructuras repetitivas más anidadas.</p>
+		<button  onclick="acth()">Click</button>
+		<p>i) Ingrese 5 números y luego imprima cuántos números están pares y cuántos son impares. Usar el operador %.</p>
+		<button  onclick="acti()">Click</button>
+		<script>
+			function acta(){
+				a=0;
+				b=50;
+				c=-50;
+				var num1 = new Array(); 
+				var num2 = new Array(); 
+				var num3 = new Array(); 
+				while (a<50){
+					num1.push(a);
+					a++;
+				}
+				alert(num1);
+				while (b>1){
+					num2.push(b);
+					b--;
+				}
+				alert(num2);
+				while (c<1){
+					num3.push(c);
+					c++;
+				}
+				alert(num3);
+			}
+			function actb(){
+				num = 0;
+				var par = new Array(); 
+				while (num<101){
+					par.push(num);
+					num=num+2
+				}
+				alert(par);
+			}
+			function actc(){
+				num = 0;
+				contador = 0;
+				numeros = new Array();
+				while (contador<26){
+					num=num+11
+					numeros.push(num);
+					contador++;
+				}
+				alert(numeros);
+			}
+			function actd(){
+				num = 0;
+				contador = 0;
+				numeros = new Array();
+				while (contador<10){
+					num=num+7
+					numeros.push(num);
+					contador++;
+				}
+				alert(numeros);
+			}
+			function acte(){
+				notas = 0;
+				aprobados = 0;
+				suspendidos = 0;
+				while (notas<10){
+					notas++;
+					not = prompt("Introduce la nota "+notas+": ");
+					if (not>=5){
+						aprobados++;
+					}else{
+						suspendidos++;
+					}
+				}
+				alert("Aprobados : "+aprobados+"\nSuspendidos : "+suspendidos);
+			}
+			function actf(){
+				media = 0;
+				contador = 1;
+				while(contador<6){
+					altura = prompt("Introduce la altura de la persona "+contador+": ");
+					media = media + parseInt(altura);
+					contador++;
+				}
+				media = media/contador;
+				alert("Altura media : "+media);
+			}
+			function actg(){
+				contador = 1;
+				salarios = 0;
+				a = 0;
+				b = 0;
+				while (contador<6){
+					salario = prompt("Introduce el salario de la persona "+contador+": ");
+					if (salario>=500 && salario<=1000){
+						a++;
+						salarios=salarios+parseInt(salario);
+					}else if(salario>1000){
+						b++;
+						salarios=salarios+parseInt(salario);
+					}else{
+						salarios=salarios+parseInt(salario);
+					}
+					contador++;
+				}
+				salarios=salarios/5
+				alert("Entre 500€ y 1000€ : "+a+"\n Mas de 1000€ : "+b+"\n Salario medio : "+salarios);
+			}
+			function acth(){
+				lista1 = new Array();
+				sum1 = 0;
+				lista2 = new Array();
+				sum2 = 0;
+				contador = 0;
+				while (contador<3){
+					num = prompt("Introduce un numero a la lista 1: ");
+					lista1.push(num);
+					sum1 = sum1+parseInt(num);
+					contador++
+				}
+				contador = 0;
+				while (contador<3){
+					num = prompt("Introduce un numero a la lista 2: ");
+					lista2.push(num);
+					sum2 = sum2+parseInt(num);
+					contador++
+				}
+				if (sum1>sum2) {
+					alert("La lista mas grande es la primera");
+				}else{
+					alert("La lista mas grande es la segunda");
+				}
+			}
+			function acti(){
+				pares = 0;
+				impares = 0;
+				contador = 0;
+				while(contador<5){
+					num =prompt("Introduce un numero : ");	
+					if (num%2==0){
+						pares++;
+					}else{
+						impares++;
+					}
+					contador++;
+				}
+				alert("Pares : "+pares+"\n Impares : "+impares);
+			}
+		</script>
+	</body>
+</html>

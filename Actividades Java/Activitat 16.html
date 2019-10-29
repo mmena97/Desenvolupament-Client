@@ -1,0 +1,37 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>a) Create an 8 elements vector and introduce 8 numbers. Finally it must print:</p>
+		<button onclick="acta()">Click</button>
+		<script>
+			function acta(){
+				var numeros=new Array();
+				contador = 0;
+				sumatotal = 0;
+				suma = 0;
+				suma2 = 0;
+				suma3 = 0;
+				while (contador<8){
+					contador++;
+					numero = prompt("Introduce el  numero ("+contador+"); ");
+					numeros.push(parseInt(numero));
+				}
+				sumatotal = numeros.reduce(function(a, b){ return a + b; });
+				for (var i = 0;i<numeros.length;i++) {
+					suma = suma + parseInt(numeros[i]);
+					if (numeros[i]>5){
+						suma2++;
+						suma3 = suma3 + parseInt(numeros[i]);
+					}
+				}
+				media = suma/8;
+				alert("Suma total : "+sumatotal+"\nMedia : "+media+"\nSuma numeros mayores que 5 : "+suma3+"\nNumeros mayores que 5 : "+suma2);
+			}
+
+		</script>
+	</body>
+</html>

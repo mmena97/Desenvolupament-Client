@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>a) Introduzca una fecha e imprima el mensaje "Hoy es Navidad" si la fecha es la Navidad de este año. (Fecha
+		debe introducirse por partes: día, mes y año).</p>
+		<button  onclick="acta()">Click</button>
+		<p>b) Introduzca tres números diferentes y si todos ellos son menos de 10, imprima el mensaje "Todos son menos de 10".</p>
+		<button  onclick="actb()">Click</button>
+		<p>c) Introduzca dos números que representen un punto de coordenadas (x, y) y, a continuación, imprima un mensaje informando de ello a
+		sobre dónde está situado el punto:</p>
+		<button  onclick="actc()">Click</button>
+		<p>d) Ingresar dos números que representen el salario y los años del trabajador en la empresa, calcular e imprimir
+		el salario del año siguiente de acuerdo con las siguientes condiciones:</p>
+		<button  onclick="actd()">Click</button>
+		<p>e) Introduzca tres números diferentes y si al menos uno de ellos es menor de 10, imprima el mensaje "Alguno es menos de 10".</p>
+		<button  onclick="acte()">Click</button>
+		<script>
+			function acta(){
+				dia = prompt("Introduce el dia: ");
+				mes = prompt("Introduce el mes: ");
+				año = prompt("Introduce el año: ");
+				if(dia==25 && mes ==12){
+					alert("Hoy es Navidad");
+				}
+			}
+			function actb(){
+				num1 = prompt("Dame el primer numero: ");
+				num2 = prompt("Dame el segunda numero: ");
+				num3 = prompt("Dame el tercer numero: ");
+				if (num1<10 && num2<10 && num3<10){
+					alert("Todos son menos de 10");
+				}
+			}
+			function actc(){
+				x = prompt("Introduce el valor de x: ");
+				y = prompt("Introduce el valor de y: ");
+				if(x>0 && y>0){
+					alert("Primer Cuadrante");
+				}else if(x<0 && y>0){
+					alert("Segundo Cuadrante");
+				}else if(x<0 && y<0){
+					alert("Tercer Cuadrante");
+				}else if(x>0 && y<0){
+					alert("Cuarto Cuadrante");
+				}
+			}
+			function actd(){
+				salario = prompt("Introduce el salario: ");
+				años = prompt("Introduce los años: ");
+				if(salario<500 && años>9){
+					salario= parseInt(salario)+(parseInt(salario)*0.20)
+					alert("Salario del año siguiente: "+salario);
+				}else if(salario<500 && años<10){
+					salario=parseInt(salario)+(parseInt(salario)*0.05)
+					alert("Salario del año siguiente: "+salario);
+				}else if(salario>500){
+					alert("Salario del año siguiente: "+salario);
+				}
+			}
+			function acte(){
+				num1 = prompt("Dame el primer numero: ");
+				num2 = prompt("Dame el segunda numero: ");
+				num3 = prompt("Dame el tercer numero: ");
+				if(num1<10 || num2<10 || num3<10){
+					alert("Alguno es menos de 10");
+				}
+			}
+		</script>
+	</body>
+</html>

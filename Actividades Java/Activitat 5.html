@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>a) Escriba el nombre y las tres marcas de un estudiante, si el promedio es mayor o igual a 5, entonces el valor de
+		mensaje "¡Enhorabuena! Usted aprueba el examen" debe aparecer.</p>
+		<button  onclick="acta()">Click</button>
+		<p>b) Introduzca un correo electrónico dos veces e imprima el mensaje "Los correos electrónicos son diferentes" si no son iguales.</p>
+		<button  onclick="actb()">Click</button>
+		<p>c) Indicar la edad de una persona, si es mayor de edad (igual o superior a 18 años) y no está jubilada.
+		(menos de 65), debe aparecer el mensaje "Usted está en edad de trabajar".</p>
+		<button  onclick="actc()">Click</button>
+		<p>d) Introduzca un número entero, si el número es par, deberá aparecer el mensaje "Número par".</p>
+		<button  onclick="actd()">Click</button>
+		<script>
+			function acta(){
+				num1 = prompt("Dame la primera nota: ");
+				num2 = prompt("Dame la segunda nota: ");
+				num3 = prompt("Dame la tercera nota: ");
+				if ((parseInt(num1)+parseInt(num2)+parseInt(num3))/3>=5) {
+					alert("¡Enhorabuena! Usted aprueba el examen");
+				}
+			}
+			function actb(){
+				correo1 = prompt("Introduzca el correo electrónico: ");
+				correo2 = prompt ("Vuelva a Introducir el correo: ");
+				if (correo1!==correo2){
+					alert("Los correos electrónicos son diferentes.");
+				}
+			}
+			function actc(){
+				edad = prompt("Introduce tu edad: ");
+				if (edad>=18 && edad<65){
+					alert("Usted está en edad de trabajar");
+				}
+			}
+			function actd(){
+				numero = prompt("Introduce un numero: ");
+				if (numero % 2 == 0) {
+			        alert ("Número par");
+			    }
+			}	
+		</script>
+	</body>
+</html>

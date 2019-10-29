@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>a) Introduzca tres números diferentes e imprima el más grande (máximo).</p>
+		<button  onclick="acta()">Click</button>
+		<p>b) Introduzca tres números diferentes e imprima el más pequeño (mínimo).</p>
+		<button  onclick="actb()">Click</button>
+		<p>c) Introduzca un número entero entre (0 y 999), e imprima un mensaje informando sobre cuántos
+		dígitos que tiene (1, 2 ó 3).</p>
+		<button  onclick="actc()">Click</button>
+		<p>d) Introduzca un número entero e imprima el mensaje "Positive Number", "Negative Number" o "Zero".
+		en todos los casos.</p>
+		<button  onclick="actd()">Click</button>
+		<script>
+			function acta(){
+				num1 = prompt("Dame el primer numero: ");
+				num2 = prompt("Dame el segunda numero: ");
+				num3 = prompt("Dame el tercer numero: ");
+				if(num1>num2 && num1>num3){
+					alert("El numero mas alto es el "+num1);
+				}else if(num2>num1 && num2>num3){
+					alert("El numero mas alto es el "+num2);
+				}else{
+					alert("El numero mas alto es el "+num3);
+				}
+			}
+			function actb(){
+				num1 = prompt("Dame el primer numero: ");
+				num2 = prompt("Dame el segunda numero: ");
+				num3 = prompt("Dame el tercer numero: ");
+				if(num1<num2 && num1<num3){
+					alert("El numero mas bajo es el "+num1);
+				}else if(num2<num1 && num2<num3){
+					alert("El numero mas bajo es el "+num2);
+				}else{
+					alert("El numero mas bajo es el "+num3);
+				}	
+			}
+			function actc(){
+				num = prompt("Dame un numero entre(0-999): ");
+				if (num<10) {
+					alert("Tiene 1 digito");
+				}else if(num<100 && num>9){
+					alert("Tiene 2 digitos");
+				}else{
+					alert("Tiene 3 digitos");
+				}
+			}
+			function actd(){
+				num = prompt("Dame un numero entre: ");
+				if (num>0) {
+					alert("Numero positivo");
+				}else if(num<0){
+					alert("Numero negativo");
+				}else{
+					alert("Cero");
+				}
+			}
+		</script>	
+		
+	</body>
+</html>

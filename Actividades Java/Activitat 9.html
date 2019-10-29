@@ -1,0 +1,212 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Titulo</title>
+	</head>
+	<body>
+		<p>a) Introduzca una de las siguientes palabras (house, table, dog, cat) e imprima la traducción en Castellano o catalán.</p>
+		<button  onclick="acta()">Click</button>
+		<p>b) Introduzca un número e imprima el mes correspondiente (1: enero, 2: febrero, ..... 12: Diciembre).</p>
+		<button  onclick="actb()">Click</button>
+		<p>c) Introduzca un número e imprima el número de días del mes correspondiente (enero: 31, Febrero: 28, .... Diciembre: 31).</p>
+		<button  onclick="actc()">Click</button>
+		<p>d) Introduzca una letra y luego imprima "Vocal" o "Consonante" dependiendo de la letra introducida.</p>
+		<button  onclick="actd()">Click</button>
+		<script>
+			function acta(){
+				palabra = prompt("Escribe la palabra que deseas traducir : ")
+				switch (palabra) {
+					case 'house':
+						alert("Castellano : casa");
+						break;
+					case 'table':
+						alert("Castellano : mesa");
+						break;
+					case 'dog':
+						alert("Castellano : perro");
+						break;
+					case 'cat':
+						alert("Castellano : gato");
+					default:
+						alert("No se puede traducir esa palabra");
+				}
+			}
+			function actb(){
+				numero = prompt("Introduce un numero entre el 1 y el 12 : ");
+				switch (numero){
+					case '1':
+						alert("1 : Enero");
+						break;
+					case '2':
+						alert("2 : Febrero");
+						break;
+					case '3':
+						alert("3 : Marzo");
+						break;
+					case '4':
+						alert("4 : Abril");
+						break;
+					case '5':
+						alert("5 : Mayo");
+						break;
+					case '6':
+						alert("6 : Junio");
+						break;
+					case '7':
+						alert("7 : Julio");
+						break;
+					case '8':
+						alert("8 : Agosto");
+						break;
+					case '9':
+						alert("9 : Septiembre");
+						break;
+					case '10':
+						alert("10 : Octubre");
+						break;
+					case '11':
+						alert("11 : Noviembre");
+						break;
+					case '12':
+						alert("12 : Diciembre");
+						break;
+					default:
+						alert("No es un numero valido");
+				}
+			}
+			function actc(){
+				numero = prompt("Introduce un numero entre el 1 y el 12 : ");
+				switch (numero){
+					case '1':
+						alert("Enero : 31");
+						break;
+					case '2':
+						alert("Febrero : 28");
+						break;
+					case '3':
+						alert("Marzo : 31");
+						break;
+					case '4':
+						alert("Abril : 30");
+						break;
+					case '5':
+						alert("Mayo : 31");
+						break;
+					case '6':
+						alert("Junio :30");
+						break;
+					case '7':
+						alert("Julio : 31");
+						break;
+					case '8':
+						alert("Agosto : 31");
+						break;
+					case '9':
+						alert("Septiembre : 30");
+						break;
+					case '10':
+						alert("Octubre : 31");
+						break;
+					case '11':
+						alert("Noviembre : 30");
+						break;ws
+					case '12':
+						alert("Diciembre : 31");
+						break;
+					default:
+						alert("No es un numero valido");
+				}
+			}
+			function actd(){
+				letra = prompt("Introduce una letra : ");
+				switch (letra){
+					case 'a':
+						alert("Vocal");
+						break;
+					case 'b':
+						alert("Consonante");
+						break;
+					case 'c':
+						alert("Consonante");
+						break;
+					case 'd':
+						alert("Consonante");
+						break;
+					case 'e':
+						alert("Vocal");
+						break;
+					case 'f':
+						alert("Consonante");
+						break;
+					case 'g':
+						alert("Consonante");
+						break;
+					case 'h':
+						alert("Consonante");
+						break;
+					case 'i':
+						alert("Vocal");
+						break;
+					case 'j':
+						alert("Consonante");
+						break;
+					case 'k':
+						alert("Consonante");
+						break;ws
+					case 'l':
+						alert("Consonante");
+						break;
+					case 'm':
+						alert("Consonante");
+						break;
+					case 'n':
+						alert("Consonante");
+						break;
+					case 'ñ':
+						alert("Consonante");
+						break;
+					case 'o':
+						alert("Vocal");
+						break;
+					case 'p':
+						alert("Consonante");
+						break;
+					case 'q':
+						alert("Consonante");
+						break;
+					case 'r':
+						alert("Consonante");
+						break;
+					case 's'
+:						alert("Consonante");
+						break;
+					case 't':
+						alert("Consonante");
+						break;
+					case 'u':
+						alert("Vocal");
+						break;
+					case 'v':
+						alert("Consonante");
+						break;
+					case 'w':
+						alert("Consonante");
+						break;
+					case 'x':
+						alert("Consonante");
+						break;
+					case 'y':
+						alert("Consonante");
+						break;
+					case 'z':
+						alert("Consonante");
+						break;
+					default:
+						alert("No es una letra");
+				}
+
+			}
+		</script>
+	</body>
+</html>

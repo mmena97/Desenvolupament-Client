@@ -1,0 +1,22 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>Introduce la contraseña</p>
+		<input  name="contraseña1" id="contra1"><br>
+		<input  name="contraseña2" id="contra2"><br>
+		<button onclick="comprobar()">Comprobar</button>
+		<script>
+			function comprobar(){
+				if (document.getElementById("contra1").value==document.getElementById("contra2").value) {
+					alert("Las contraseñas coinciden")
+				}else{
+					alert("Las contraseñas no coinciden")
+				}
+			}
+		</script>
+	</body>
+</html>

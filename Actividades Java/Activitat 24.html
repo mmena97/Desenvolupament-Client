@@ -1,0 +1,24 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>Responde :</p>
+		<input type="radio" name="respuesta1" id="res1"> Older than 18, or 2<br>
+  		<input type="radio" name="respuesta2" id="res2"> Younger than 18<br>
+  		<p></p>
+  		<button onclick="comprobarEdad()">Comprobar</button>
+  		<script>
+		function comprobarEdad() {
+			if (document.getElementById("res1").checked == true){
+				alert("Puedes entrar")
+		  	}else{
+		  		alert("No puedes entrar")
+		  	}
+		  	alert(resul);
+		}
+		</script>
+	</body>
+</html>

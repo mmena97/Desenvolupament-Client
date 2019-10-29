@@ -1,0 +1,183 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>a) Introduzca la base B y la altura H de 3 triángulos. Para cada triángulo debe calcular e imprimir su área
+		A= B*H/2 y cuántos triángulos tiene un son mayores que 12. :</p>
+		<button  onclick="acta()">Click</button>
+		<p>b) Introduzca 10 números e imprima la suma de los últimos 5 números.</p>
+		<button  onclick="actb()">Click</button>
+		<p>c) Imprimir la tabla de 5 (de 5 a 50).</p>
+		<button  onclick="actc()">Click</button>
+		<p>d) Introduzca un número N e imprima su tabla de multiplicar (de N a N*10).</p>
+		<button  onclick="actd()">Click</button>
+		<p>e) Entra en los lados de 4 triángulos, e informa sobre:
+		Para cada triángulo, qué tipo de triángulo : equilátero (tres lados iguales), isósceles (dos lados iguales)
+		o escaleno (todos los lados diferentes).</p>
+		<button  onclick="acte()">Click</button>
+		<p>f) Introduzca 10 números e imprima....</p>
+		<button  onclick="actf()">Click</button>
+		<p>g) Introducir las notas de los alumnos de tres clases diferentes (clase A: 5 alumnos, clase B: 6 alumnos,
+		clase C: 11 estudiantes) e imprimir...</p>
+		<button  onclick="actg()">Click</button>
+		<script>
+			function acta(){
+				triangulos = new Array();
+				contador = 0;
+				contadort = 0;
+				may = 0;
+				while (contador!=3){
+					triangulo = new Array();
+					base = prompt("Escribe la base del triangulo : ");
+					triangulo.push(base);
+					altura = prompt("Escribe la altura del triangulo : ");
+					triangulo.push(altura);
+					triangulos.push(triangulo);
+					area = parseInt(base)*parseInt(altura)/2
+					triangulo.push(area);
+					contador++
+				}
+				for (var i=0;i<triangulos.length;i++){
+					contadort++;
+					alert("El area del triangulo "+contadort+" es "+triangulos[i][2]);
+					if(triangulos[i][2]>12){
+						may++;
+					}
+				}
+				alert("Hay "+may+" triangulos con el area mayor que 12.");
+			}
+			function actb(){
+				contador = 0;
+				suma = 0;
+				do
+				{
+					numero = prompt("Introduce un numero : ")
+					contador++;
+				}while(contador < 5)
+				contador = 0;
+				do
+				{
+					numero = prompt("Introduce un numero : ")
+					suma = suma+parseInt(numero);
+					contador++;
+				}while(contador < 5)
+				alert("La suma total es "+suma);
+			}
+			function actc(){
+				lista = new Array();
+				contador = 1;
+				do
+				{
+					numero = 5*contador;
+					lista.push(numero);
+					contador++;
+				}
+				while(contador<11)
+				alert(lista);
+			}
+			function actd(){
+				num = prompt("Introduce un numero : ");
+				lista = new Array();
+				contador = 1;
+				do
+				{
+					numero = num*contador;
+					lista.push(numero);
+					contador++;
+				}
+				while(contador<11)
+				alert(lista);
+			}
+			function acte(){
+				contador = 0;
+				equilatero = 0;
+				isosceles = 0;
+				escaleno = 0;
+				do
+				{
+					triangulo = new Array();
+					lado1 = prompt("Introduce el primer lado : ")
+					triangulo.push(lado1);
+					lado2 = prompt("Introduce el segundo lado : ")
+					triangulo.push(lado2);
+					lado3 = prompt("Introduce el tercer lado : ")
+					triangulo.push(lado3);
+					if(lado1 == lado2 && lado1==lado3){
+						equilatero++;
+					}else if(lado1 == lado2 || lado1==lado3){
+						isosceles++;
+					}else{
+						escaleno++;
+					}
+					contador++;					
+				}while (contador<4)
+				alert("Equilatero : "+equilatero+"\nIsosceles : "+isosceles+"\nEscaleno : "+escaleno);
+				if (equilatero>isosceles && equilatero>escaleno) {
+						alert("Hay mas triangulos equilateros");
+				}else if(isosceles>equilatero && equilatero>escaleno){
+						alert("Hay mas triangulos isosceles");
+				}else{
+						alert("Hay mas triangulos escalenos");
+				}
+			}		
+			function actf(){
+				contador = 1;
+				neg = 0;
+				pos = 0;
+				par = 0;
+				sumpares = 0;
+				impar = 0;
+				do{
+					numero = prompt("Introduce un numero "+contador+" : ");
+					if (numero>0){
+						pos++;
+					}else{
+						neg++;
+					}
+					if (numero%2==0){
+						par++;
+							sumpares = sumpares+parseInt(numero);
+					}else{
+						impar++;
+					}
+					contador++;
+				}while(contador < 11)
+				alert("Positivos : "+pos+"\nNegativos : "+neg+"\nImpares : "+impar+"\nSuma Pares : "+sumpares);
+			}
+			function actg(){
+				contador = 1;
+				promedio1 = 0;
+				promedio2 = 0;
+				promedio3 = 0;
+				do{
+					nota = prompt("Introduce la nota del estudiante "+contador+" : ");
+					promedio1 = promedio1+parseInt(nota);
+					contador++;
+				}while(contador<6)
+				contador = 1;
+				do{
+					nota = prompt("Introduce la nota del estudiante "+contador+" : ");
+					promedio2 = promedio2+parseInt(nota);
+					contador++;
+				}while(contador<7)
+				contador = 1;
+				do{
+					nota = prompt("Introduce la nota del estudiante "+contador+" : ");
+					promedio3 = promedio3+parseInt(nota);
+					contador++;
+				}while(contador<12)
+				contador = 1;
+				if (promedio1>promedio2 && promedio1>promedio3){
+					alert("La clase con mejor promedio es la primera");
+				}else if(promedio2>promedio1 && promedio2>promedio3){
+					alert("La clase con mejor promedio es la segunda");
+				}else{
+					alert("La clase con mejor promedio es la tercera");
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,95 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>a) Ingresar números positivos y negativos hasta que ingresemos el número 9999, sumar todos ellos,e imprimir el mensaje:</p>
+		<button  onclick="acta()">Click</button>
+		<p>b) Ingresar la información de las personas: número de identificación, edad y sexo (hombre/mujer) hasta que ingresemos el número 0 como Número de identificación y, a continuación, imprima la siguiente información:</p>
+		<button  onclick="actb()">Click</button>
+		<p>c) Introduzca los datos de las cuentas bancarias: número de cuenta, nombre del cliente y dinero. Calcular la suma de todas las cuentas bancarias</p>
+		<button  onclick="actc()">Click</button>
+	</body>
+	<script>
+		function acta(){
+			sum = 0;
+			do{
+				num = prompt("Introduce un numero : ");
+				sum = sum + parseInt(num);
+			}
+			while (parseInt(num)!==9999)
+		 	if (sum==0){
+		 		alert("CERO");
+		 	}else if(sum>0){
+		 		alert("POSITIVO");
+		 	}else{
+		 		alert("NEGATIVO");
+		 	}
+		}
+		function actb(){
+			personas = new Array();
+			do{
+				persona = new Array();
+				id = prompt( "Introduce el número de identificación :");
+				persona.push(id);
+				nombre = prompt( "Introduce el nombre :");
+				persona.push(nombre);
+				edad = prompt( "Introduce la edad :");
+				persona.push(edad);
+				sexo = prompt( "Introduce el sexo(hombre/mujer) :");
+				persona.push(sexo);
+				personas.push(persona);
+			}
+			while(id!=0)
+			hombres = 0;
+			hombreV = 0;
+			mujeres = 0;
+			mujerV = 0;
+			hombreJ = 1000;
+			gente = 0;
+			for (var i=0;i<personas.length;i++){
+				gente++;
+				if(personas[i][3]=="hombre"){
+					hombres++;
+					if (personas[i][2]>17 && personas[i][2]<66){
+						hombreV++;
+					}
+					if (personas[i][2]<hombreJ){
+						hombreJ = personas[i][2]
+						nombreHJ = personas[i][1];
+					}
+				}else if(personas[i][3]=="mujer"){
+					mujeres++;
+					if (personas[i][2]>mujerV){
+						mujerV = personas[i][2]
+						nombreMV = personas[i][1];
+					}
+				}
+			}
+			alert("   RESUMEN \nGente : "+gente+"\nHombres : "+hombres+"\nMujeres : "+mujeres+"\nHombres entre 18 y 65 años : "+hombreV+"\nMujer mas mayor : "+nombreMV+"\nEl hombre mas joven : "+nombreHJ);
+		}
+		function actc(){
+			cuentas = new Array();
+			sumatotal = 0;
+			do{
+				cuenta = new Array();
+				numero = prompt( "Introduce el número de la cuenta :");
+				cuenta.push(numero);
+				nombre = prompt( "Introduce el nombre :");
+				cuenta.push(nombre);
+				dinero = prompt( "Introduce el dinero del que dispone :");
+				cuenta.push(dinero);
+				cuentas.push(cuenta);
+				pregunta = prompt("Deseas introducir otro usuario(S/N) : ");
+			}
+			while (pregunta=="S" || pregunta=="s")
+				for (var i=0;i<cuentas.length;i++){
+					alert(cuentas[i][1]+" es el propietario de la cuenta "+cuentas[i][0]+" con "+cuentas[i][2]+"€.");
+					sumatotal = sumatotal+parseInt(cuentas[i][2]);
+				}
+			alert("Dinero total : "+sumatotal)	
+		}
+	</script>
+</html>

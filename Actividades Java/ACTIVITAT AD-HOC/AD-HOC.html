@@ -1,0 +1,86 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<script src="Persona.js"></script>
+	</head>
+	<body>
+		<h2>PERSONAS</h2>
+		<p id="listado"></p>
+		<p></p>
+		Nombre <input type="text" name="Nombre" id="nombre">
+		Oficio <input type="text" name="Oficio" id="oficio">
+		Disponibilidad <input type="text" name="Disponibilidad Inicio" id="disponibilidadIni"><input type="text" name="Disponibilidad Final" id="disponibilidadFi">
+		Correo <input type="text" name="Correo" id="correo">
+		<p></p>
+		<button onclick="agregarPersona()">Subir</button>
+		<button onclick="ordenarAsc()">Ordenar por Disponibilidad Asc</button>
+		<button onclick="ordenarDes()">Ordenar por Disponibilidad Des</button>
+		<button onclick="contarOficio()">Contar por Oficio</button><input type="text" name="buscarOficio" id="buscarOfi">
+		<script>
+
+			var lista = [];
+			lista[0] = new Persona("Miguel Angel","Programador","07/17","mena_alcalde@hotmail.com");
+			lista[1] = new Persona("Juana","Medico","13/19","juana_alr@gmail.com");
+			lista[2] = new Persona("Carlos","Enfermero","11/22","car134@gmail.com");
+			lista[3] = new Persona("Laura","Arquitecto","09/20","lau_han@hotmail.com");
+			lista[4] = new Persona("Laura","Arquitecto","09/20","lau_han@hotmail.com");
+			mostrarLista();
+
+			function mostrarLista(){
+				var texto = "";
+				for(var i=0;i<lista.length;i++){
+					var datosPersona=lista[i].datos();
+					texto = texto +datosPersona+"<br>";
+				}
+				document.getElementById("listado").innerHTML = "<p>"+texto+"</p>";
+			}
+
+			function agregarPersona(){
+				var nom = document.getElementById("nombre").value;
+				var ofi = document.getElementById("oficio").value;
+				var dispIni = document.getElementById("disponibilidadIni").value;
+				var dispFi = document.getElementById("disponibilidadFi").value;
+				var disp = dispIni+"/"+dispFi;
+				var cor = document.getElementById("correo").value;
+				validarCorreo(cor);
+				if (validarCorreo(cor)==true){
+					var c = new Persona(nom,ofi,disp,cor);
+					lista.unshift(c);
+					mostrarLista();
+				}else{
+					alert("El correo no es valido");
+				}	
+			}
+
+			function validarCorreo(cor) {
+			    var formato = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			    return formato.test(cor);
+			}
+
+			function ordenarAsc(){
+				lista.sort(function(a,b){ return (a.disponibilidad>b.disponibilidad)?1:-1;});
+				mostrarLista();
+			}
+
+			function ordenarDes(){
+				lista.sort(function(a,b){ return (a.disponibilidad>b.disponibilidad)?-1:1;});
+				mostrarLista();
+			}
+
+			function contarOficio(){
+				var oficioBus = document.getElementById("buscarOfi").value.trim();
+				contador = 0;
+				for(var i=0;i<lista.length;i++){
+					if(lista[i].oficio==oficioBus){
+						contador++;
+					}
+				}
+				alert("Hay "+contador+" personas que trabajan de "+oficioBus);
+			}
+
+		</script>
+		
+	</body>
+</html>

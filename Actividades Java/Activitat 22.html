@@ -1,0 +1,135 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<p>Ejercicio 1</p>
+		<select id="opciones" size="4">
+		  <option>Pepperoni</option>
+		  <option>Quatro Formaggi</option>
+		  <option>Procciuto</option>
+		  <option>Normalini</option>
+		</select>
+		<p></p>
+		<p id="soluciona1"></p>
+		<button onclick="comproPrecio()">Comprobar precio</button>
+		<p>Ejercicio 2</p>
+		<select id="procesadores" size="3">
+		  <option value="400">Intel I3</option>
+		  <option value="600">Intel I5</option>
+		  <option value="800">Intel I7</option>
+		</select>
+		<select id="monitores" size="3">
+		  <option value="250">Samsung 20'</option>
+		  <option value="350">Samsung 22'</option>
+		  <option value="550">Samsung 26'</option>
+		</select>
+		<select id="discos" size="3">
+		  <option value="300">500 Gb</option>
+		  <option value="440">1 Tb</option>
+		  <option value="500">3 Tb</option>
+		</select>
+		<p></p>
+		<p id="soluciona2"></p>
+		<button onclick="orde()">Comprobar Precio</button>
+		<p>Ejercicio 3</p>
+		<select id="pizzas" size="4">
+		  <option value="6">Pepperoni</option>
+		  <option value="5">Quatro Formaggi</option>
+		  <option value="4">Procciuto</option>
+		  <option value="20">Normalini</option>
+		</select>
+		<p></p>
+		<p id="soluciona3"></p>
+		<input  name="cantidad" id="cantidad">
+		<button onclick="comproPizza()">Comprobar Pedido</button>
+		<p>Ejercicio 3</p>		
+		<p>1) ¿2 + 2?</p>
+		<select id="pregunta1" size="4">
+		  <option value="cor">4</option>
+		  <option value="inc">200</option>
+		  <option value="inc">5</option>
+		  <option value="inc">-2</option>
+		</select>
+		<p>2)¿Capital de España?</p>
+		<select id="pregunta2" size="4">
+		  <option value="inc">Londres</option>
+		  <option value="inc">Barcelona</option>
+		  <option value="cor">Madrid</option>
+		  <option value="inc">Mi casa</option>
+		</select>
+		<p>3)¿Presidente de EEUU?</p>
+		<select id="pregunta3" size="4">
+		  <option value="inc">Pedro Sanchez</option>
+		  <option value="cor">Donald Trump</option>
+		  <option value="inc">Mi tio</option>
+		  <option value="inc">Tu</option>
+		</select>
+		<p>4)¿Probabilidades de suspende?</p>
+		<select id="pregunta4" size="4">
+		  <option value="inc">0%</option>
+		  <option value="inc">20%</option>
+		  <option value="inc">50%</option>
+		  <option value="cor">100%</option>
+		</select>
+		<p></p>
+		<button onclick="comproSol()">Comprobar Soluciones</button>
+		<script>
+			function comproPrecio(){
+				var x = document.getElementById("opciones").value;
+				if(x=="Pepperoni"){
+					pr = 6;
+				}else if(x=="Quatro Formaggi"){
+					pr = 5;
+				}else if(x=="Procciuto"){
+					pr = 4;
+				}else if(x=="Normalini"){
+					pr = 20;
+				}
+				document.getElementById("soluciona1").innerHTML = "El precio de la pizza es de "+pr+"€";
+			}
+			function orde(){
+				var sel1 = document.getElementById('procesadores');
+				var sel2 = document.getElementById('monitores');
+				var sel3 = document.getElementById('discos');
+				var precioPro = sel1.options[sel1.selectedIndex].value;
+				var precioMoni = sel2.options[sel2.selectedIndex].value;
+				var precioDis = sel3.options[sel3.selectedIndex].value;
+				precioTotal = parseInt(precioPro)+parseInt(precioMoni)+parseInt(precioDis);
+				document.getElementById("soluciona2").innerHTML = "El precio total de los componentes es de "+precioTotal+"€";
+			}
+			function comproPizza(){
+				var sel = document.getElementById('pizzas');
+				var preciopizza = sel.options[sel.selectedIndex].value;
+				precioTotPizza = parseInt(preciopizza)*parseInt(document.getElementById('cantidad').value);
+				document.getElementById("soluciona3").innerHTML = "El precio total de las pizzas es de "+precioTotPizza+"€";
+			}
+			function comproSol(){
+				nota = 0;
+				var sel1 = document.getElementById('pregunta1');
+				var sel2 = document.getElementById('pregunta2');
+				var sel3 = document.getElementById('pregunta3');
+				var sel4 = document.getElementById('pregunta4');
+				var sol1 = sel1.options[sel1.selectedIndex].value;
+				var sol2 = sel2.options[sel2.selectedIndex].value;
+				var sol3 = sel3.options[sel3.selectedIndex].value;
+				var sol4 = sel4.options[sel4.selectedIndex].value;
+				if(sol1=="cor"){
+					nota = nota+2.5;
+				}
+				if(sol2=="cor"){
+					nota = nota+2.5;
+				}
+				if(sol3=="cor"){
+					nota = nota+2.5;
+				}
+				if(sol4=="cor"){
+					nota = nota+2.5;
+				}
+				alert("Tu nota es un "+nota);
+			}
+		</script>
+	</body>
+</html>
