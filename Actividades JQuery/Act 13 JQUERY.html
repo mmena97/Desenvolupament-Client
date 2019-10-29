@@ -1,0 +1,35 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="C:/Users/mange/Librerias/jquery-3.4.1.min.js"></script>
+	</head>
+  <style>
+    div{
+      height : 200px;
+      width : 200px;
+      border-style: solid;
+    }
+  </style>
+	<body>
+    <div>
+      <p id= "informacion" >Hola mundo</p>
+    </div>
+    <p id="alerta"></p>
+		<script>
+			$(document).ready(function(){
+
+        $("div").mouseleave(function(){
+          $("#informacion").hide();
+          $("#alerta").text("Mouse out of the DIV");
+        });
+
+        $("div").mouseenter(function(){
+          $("#informacion").show();
+          $("#alerta").text("");
+        });
+
+      });
+		</script>
+	</body>
+</html>

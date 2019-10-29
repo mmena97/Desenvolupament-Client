@@ -1,0 +1,127 @@
+
+																	EJERCICIOS JQUERY
+
+1º
+
+	a) Create a web page with 2 paragraphs (<p>). And write a script using jQuery to catch the click event on the 2nd paragraph.
+	When you click on the 2nd paragraph an alert message "You pressed on 2nd Paragraph" must appear.
+
+2º
+
+	a) Create a web page with a two-rows table (<tr>). And write a script using jQuery to catch the click event on the table rows.
+	When you click on a row, it must change its background colour. Use a different colour for every row.´
+
+3º
+
+	a) Create a web page with an unordered list (<ul>) with 4 different list items (<li>). And write a script using jQuery to hide the <li> element that yiu press.
+	 To hide an element, jQuery provides us the method hide().
+
+4º
+
+	a) Create a web page with two tables. Every table with 3 rows. And write a script using jQuery to change the background colour when you click on a row y in the first table,
+	and to change the text size in the second table.
+
+5º
+
+	a) Create a web page with five different <h1> and <p> elements representing the headline and summary of a newspaper article.
+	And three different buttons to change the text font size of the content in the odd paragraphs to small (10px), medium (15px) or big (20px) respectively.
+
+6º
+
+	a) Create a web page with two tables. Every table has 3 rows and 3 columns, and every cell has the same text "OFF". When we press a button the text inside the first table must change to "ON", but the second table mustn’t change at all.
+
+7º
+
+	a) Create a web page with a link (<a>) with href property empty, and three buttons. Write a script using jQuery to set a different value for href property depending on the button we click on.
+
+8º
+
+	a) Create a web page with a table. Define two styles, one for the <thead> section and the other for the <tbody> section. Using two buttons link and unlink the two styles or classes.
+
+9º
+
+	a) Create a web page with two buttons. When you press on the first one, an alert box must appear showing all the content in the <head> section. And when you press on the second button, an alert box must appear showing all the content in the <body> section.
+
+10º
+
+	a) Create a web page with some words using <strong> element. When you click on them, the words must be hidden.
+
+11º
+
+	a) Create a table with 2 rows and two columns. When you move the cursor over a cell, this must change its background colour,
+	 and when you move out the cursor from the cell, this must change to its original background colour.
+
+12º
+
+	a) Create a table with 2 rows and 2 columns. Change the colour of cells when the mouse cursor moves over and out.
+
+13º
+
+	a) Create a div with a width and height of 200 pixels. Then the mouse position must be displayed when the mouse cursor is over this div.
+	And a message "Mouse out of the DIV" must be displayed when the mouse cursor isn't inside the div.
+
+14º
+
+	a) Create a web page with 2 buttons. When you press on a button, its background colour must change, and when you release the button,
+	it must return to the original background colour.
+
+15º
+
+	a) Create a web page with a div of 800x70 pixels. When you double-click over this div, it must be re-sized to 250x250 pixels,
+	and if you double-click again the div munst return to its original size (800x70).
+
+16º
+
+	a) Create a web page with two text elements (input type="text") in a form. Set their font colour to blue. When an input element get the focus,
+	its font colour must change to red.
+
+17º
+
+	a) Create a form with a text field (input type="text"). When this field loses the focus and its content is empty,
+	an alert message "Field can't be empty" must be shown.
+
+18º
+
+	a) Create a form where you can add and remove text fields. You can use a button to create new text fields.
+	 Every text field must have its particular button to remove itself.
+
+19º
+
+	a) Create a DIV element with some paragraphs inside. When you press on this div, it must be hidden slowly.
+	And when it is completely hidden, another text block must appear slowly.
+
+20º
+
+	a) Create a DIV with some paragraphs. When you press on this div, it must be faded out.
+	And when it is completely hidden, another div must be faded in.
+
+21º
+
+	a) Create a div with some paragraphs. When you click on the div, its opacity must be reduced to 0.20.
+	And when you double click on the div, its opacity must be increased to 1.
+
+22º
+
+	a) Create a table with 1 row and 2 columns. There must be an image and a button in every cell.
+	When you press on a button cell, its image visibility must change from visible to hidden and viceversa.
+
+23º
+
+	a) Create a page with a list of links (<a>). Create a script to highlight all the links to subdomains .es. Use the indexOf String method.
+
+24º
+
+	a) Write a Javascript script that loads the information from two different txt files (fiile1.txt, file2.txt) inside a div container using the jQuery
+	load method depending on which of the buttons #button1 or #button2 is clicked.
+
+25º
+
+	a) Write a Javascript script that uses 2 input text controls to enter the value of the 2 operands and 4 different buttons to perform
+	the 4 basic arithmetic operations (addition, substraction, product and division).The data (2 operands and 1 operation) is sent to the server
+	where the corresponding operation is calculated and returned using $.post or $.get function. The result is shown in a div.
+
+26º
+
+a) Write a Javascript script that uses a SELECT form field with various names of cities (MANACOR, PALMA, INCA, SOLLER; ...)
+ to filter the information from a JSON file with the company workers information (name, age  and city).
+ The filtered result must be shown in an unordered list UL. Use a JSON file as the following one.

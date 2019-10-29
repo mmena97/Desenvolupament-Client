@@ -1,0 +1,30 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="C:/Users/mange/Librerias/jquery-3.4.1.min.js"></script>
+	</head>
+	<body>
+		<a href="" id="enl">Wikipedia</a>
+		<p></p>
+		<button id="castellano">Castellano</button> <button id="catalan">Catalan</button> <button id="ingles">Ingles</button>
+		<script>
+			$(document).ready(function(){ 
+			
+				$("#castellano").click(function(){
+					$("#enl").attr("href","https://es.wikipedia.org");
+				});		
+
+				$("#catalan").click(function(){
+					$("#enl").attr("href","https://ca.wikipedia.org");
+				});	
+
+				$("#ingles").click(function(){
+					$("#enl").attr("href","https://en.wikipedia.org");
+				});		
+			
+			});
+		</script>
+	</body>
+</html>
+

@@ -1,0 +1,22 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="C:/Users/mange/Librerias/jquery-3.4.1.min.js"></script>
+	</head>
+	<body>
+    <form>
+      <input type="text" id="texto">
+    </form>
+    <p id="alerta"></p>
+		<script>
+			$(document).ready(function(){
+
+        $("input").blur(function(){
+          alert("Field can't be empty");
+        });
+
+      });
+		</script>
+	</body>
+</html>

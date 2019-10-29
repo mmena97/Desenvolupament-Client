@@ -1,0 +1,45 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="C:/Users/mange/Librerias/jquery-3.4.1.min.js"></script>
+	</head>
+	<body>
+		<table id="tabla1">
+		  <tr id="fila1Tabla1">
+		    <th>OFF</th>
+		    <th>OFF</th>
+		    <th>OFF</th>
+		  </tr>
+		  <tr id="fila2Tabla1">
+		    <td>OFF</td>
+		    <td>OFF</td>
+		    <td>OFF</td>
+		  </tr>
+		</table>
+		<p></p>
+		<table id="tabla2">
+		  <tr id="fila1Tabla2">
+		    <th>OFF</th>
+		    <th>OFF</th>
+		    <th>OFF</th>
+		  </tr>
+		  <tr id="fila2Tabla2">
+		    <td>OFF</td>
+		    <td>OFF</td>
+		    <td>OFF</td>
+		  </tr>
+		</table>
+		<script>
+			$(document).ready(function(){ 
+
+				$("#tabla1").click(function(){
+					$("#fila1Tabla1 th").text("ON")
+					$("#fila2Tabla1 td").text("ON")
+				});
+
+			});
+		</script>
+	</body>
+</html>
+<input type="text" name="deseo">Deseo</input>

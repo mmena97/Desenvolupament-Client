@@ -1,0 +1,28 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="C:/Users/mange/Librerias/jquery-3.4.1.min.js"></script>
+	</head>
+  <style>
+    input{
+      background-color : blue
+    }
+  </style>
+	<body>
+    <form>
+      <input type="text">
+      <input type="text">
+    </form>
+    <p id="alerta"></p>
+		<script>
+			$(document).ready(function(){
+
+        $("input").focus(function(){
+          $(this).css("background-color","red");
+        });
+
+      });
+		</script>
+	</body>
+</html>

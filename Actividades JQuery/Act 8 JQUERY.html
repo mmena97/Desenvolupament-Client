@@ -1,0 +1,55 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="C:/Users/mange/Librerias/jquery-3.4.1.min.js"></script>
+		<style type="text/css">
+			.thead{
+				background-color:red;
+				font-size:22px; 
+			}
+			.tbody{
+				background-color:green;
+				font-size:18px; 
+			}
+
+		</style>
+	</head>
+	<body>
+		<table>
+		  <thead class="thead">
+		    <tr>
+		      <th>Nombre</th>
+		      <th>Id</th>
+		    </tr>
+		  </thead class="thead">
+		  <tbody class="tbody">
+		    <tr>
+		      <td>Miguel</td>
+		      <td>6745</td>
+		    </tr>
+		    <tr>
+		      <td>Laura</td>
+		      <td>8976</td>
+		    </tr>
+		  </tbody>
+		</table>
+		<p></p>
+		<button id="enlazar">Enlazar</button> <button id="desenlazar">Desenlazar</button> 
+		<script>
+			$(document).ready(function(){ 
+			
+				$("#desenlazar").click(function(){
+	  				$(".thead").removeClass("thead");
+	  				$(".tbody").removeClass("tbody");
+				});
+
+				$("#enlazar").click(function(){
+	  				$("thead").addClass("thead");
+	  				$("tbody").addClass("tbody");
+				});
+				
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="C:/Users/mange/Librerias/jquery-3.4.1.min.js"></script>
+	</head>
+  <style>
+    div{
+      height : 800px;
+      width : 70px;
+      border-style: solid;
+      text-align :center;
+    }
+  </style>
+	<body>
+    <div>
+      <p id= "informacion" >Hola mundo</p>
+    </div>
+    <p id="alerta"></p>
+		<script>
+			$(document).ready(function(){
+
+        $("div").dblclick(function(){
+          $(this).css({"height":"250px","width":"250px"});
+        });
+
+      });
+		</script>
+	</body>
+</html>

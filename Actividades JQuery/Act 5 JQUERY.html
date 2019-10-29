@@ -1,0 +1,38 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="C:/Users/mange/Librerias/jquery-3.4.1.min.js"></script>
+	</head>
+	<body>
+		<h1>Banerjee, Duflo y Kremer ganan el premio Nobel de Economía</h1>
+		<p>El Banco de Suecia les galardona porque han contribuido a desarrollar políticas e incentivos para ayudar a los hogares más pobres</p>
+		<h1>El jefe de seguridad del Papa dimite tras un nuevo escándalo </h1>
+		<p>Domenico Giani, comandante de la Gendarmería de la Santa Sede, llevaba 20 años cubriendo las espaldas de tres papas</p>
+		<h1>Una concentración en Valencia clama contra la sentencia</h1>
+		<p>Alrededor de 1.500 personas se manifiestan para pedir la libertad de los presos catalanes condenados y tildan el castigo de político</p>
+		<h1>Muere a los 89 años Harold Bloom</h1>
+		<p>Ante las críticas por su desafección por las minorías, el autor de 'El canon occidental' defendía la superioridad de escritores blancos como Shakespeare y Kafka</p>
+		<h1>Gdansk, la ciudad que nunca se ha rendido </h1>
+		<p>Al ver 'Joker' es fácil inferir que a Todd Phillips el movimiento de los indignados -y sus derivadas- se le antoja, esencialmente, una payasada.</p>
+		<button id="pequeño">Pequeño</button> <button id="mediano">Mediano</button> <button id="grande">Grande</button>
+		<script>
+			$(document).ready(function(){ 
+
+				$("#pequeño").click(function(){
+					$("p:odd").css("font-size","10px");
+				});
+
+				$("#mediano").click(function(){
+					$("p:odd").css("font-size","15px");
+				});
+
+				$("#grande").click(function(){
+					$("p:odd").css("font-size","20px");
+				});
+
+
+			});
+		</script>
+	</body>
+</html>

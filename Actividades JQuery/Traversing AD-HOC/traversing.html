@@ -1,0 +1,133 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="Persona.js"></script>
+		<style>
+            * { background-color:white; }
+            div{
+                padding: 10px;
+                border-style: solid;
+            }
+        </style>
+	</head>
+	<body>
+		<div id="principal"></div>
+		<script>
+			var lista = [];
+			lista[0] = new Persona("Miguel Angel","Programador","07/17","mena_alcalde@hotmail.com");
+			lista[1] = new Persona("Juana","Programador","13/19","juana_alr@gmail.com");
+			lista[2] = new Persona("Carlos","Enfermero","11/23","car134@gmail.com");
+			lista[3] = new Persona("Laura","Arquitecto","16/22","lau_han@hotmail.com");
+			lista[4] = new Persona("Carlos","Arquitecto","09/20","antonito@hotmail.com");
+			lista[5] = new Persona("Josue","Enfermero","13/19","josuep@hotmail.com");
+			lista[6] = new Persona("Juana","Arquitecto","11/22","juanita24@hotmail.com");
+
+			function getUnique(value, index, self) {
+				return self.indexOf(value) === index;
+			}
+			let oficios = [];
+			lista.forEach(persona => {
+				oficios.push(persona.oficio);
+			});
+			oficios = oficios.filter(getUnique);
+
+			var datosPersonasT = "";
+			var texto = "";
+			for(i in oficios){
+				var datos= "<div id='"+oficios[i]+"'>"+oficios[i]+"";
+				for (o in lista) {
+					if (lista[o].oficio==oficios[i]) {
+						var datosPersonas= "<p id='"+lista[o].nombre+"' class='"+lista[o].disponibilidad.replace("/", "")+"'>"+
+						lista[o].nombre+" - "+lista[o].oficio+" - "+lista[o].disponibilidad+" - <b>"+lista[o].email+"</b></p>";
+						datosPersonasT = datosPersonasT+datosPersonas;
+					}
+				}
+				texto = texto +datos+datosPersonasT+"</div><br>";
+				var datosPersonasT = "";
+			}
+			document.getElementById("principal").innerHTML = texto;
+
+		</script><br>
+		<input type="text" id="dat1"/>
+    <button id="b1">ID</button>
+    <input type="text" id="dat2"/>
+    <button id="b2">CLASS</button>
+    <input type="text" id="dat3"/>
+    <button id="b3">TAG</button><br><br>
+    <b>TRABAJO </b><input type="text" id="rol">
+    <button type="button" id="disponible">+ Disponible</button><button type="button" id="disponibleT">+ Disponible Todos</button>
+    <script>
+        $(document).ready(function(){
+
+
+          $("#disponible").click(function(){
+            var mayor = 0;
+            $("div, p, b,h1").css({"background-color":"white"});
+            for (var i = 0; i < lista.length; i++) {
+              if(lista[i].oficio==$("#rol").val()){
+                //ENREDO-------------------------------------------------------
+                var rol = lista[i].disponibilidad.replace("/", " ");
+                var persona =rol.replace("h","");
+                var numeros = persona.split(" ");
+                var total = numeros[1]-numeros[0];
+                //-------------------------------------------------------
+                if(total>mayor){
+                  mayor = total;
+                  var trabajoMayor = lista[i].disponibilidad;
+                }
+              }
+            }
+            var seleccionado = $("."+trabajoMayor.replace("/", ""));
+            seleccionado.css({"background-color":"#8AD0FF"});
+          });
+
+          $("#disponibleT").click(function(){
+            var mayor = 0;
+            $("div, p, b,h1").css({"background-color":"white"});
+            for (var i = 0; i < lista.length; i++) {
+              //ENREDO-------------------------------------------------------
+              var rol = lista[i].disponibilidad.replace("/", " ");
+              var persona =rol.replace("h","");
+              var numeros = persona.split(" ");
+              var total = numeros[1]-numeros[0];
+              //-------------------------------------------------------
+              if(total>mayor){
+                mayor = total;
+                var trabajoMayor = lista[i].disponibilidad;
+              }
+            }
+
+            var seleccionado = $("."+trabajoMayor.replace("/", ""));
+            seleccionado.css({"background-color":"#8AD0FF"});
+          });
+
+
+
+          $("#b1").click(function(){
+            $("div, p, b,h1").css({"background-color":"white"});
+              var seleccion = $("#dat1").val();
+              var eSeleccionado = $("#"+seleccion);
+              eSeleccionado.css({"background-color":"#0C7B66"});
+          });
+
+          $("#b2").click(function(){
+            $("div, p, b,h1").css({"background-color":"white"});
+              var seleccion = $("#dat2").val();
+              var eSeleccionado = $("."+seleccion.replace("/", ""));
+              eSeleccionado.css({"background-color":"#E56C52"});
+          });
+
+          $("#b3").click(function(){
+            $("div, p, b,h1").css({"background-color":"white"});
+              var seleccion = $("#dat3").val();
+              var eSeleccionado = $(seleccion);
+              eSeleccionado.css({"background-color":"#6DB61E"});
+          });
+
+        });
+    </script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="C:/Users/mange/Librerias/jquery-3.4.1.min.js"></script>
+	</head>
+	<body>
+		<table>
+		  <tr id="fila1">
+		    <th>Nombre</th>
+		    <th>Id</th>
+		  </tr>
+		  <tr id="fila2">
+		    <td>Miguel</td>
+		    <td>4812G</td>
+		  </tr>
+		</table>
+		<script>
+		 	$(document).ready(function(){ 
+
+		 		$("#fila1").click(function(){
+		 			$(this).css("background-color","blue");
+		 		});
+
+		 		$("#fila2").click(function(){
+		 			$(this).css("background-color","green");
+		 		});
+		 	});
+		</script>
+	</body>
+</html>
