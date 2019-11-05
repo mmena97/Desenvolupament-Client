@@ -1,0 +1,31 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!--Cree un formulario donde pueda añadir y eliminar campos de texto. Puede utilizar un botón para crear nuevos campos de texto.
+	  Cada campo de texto debe tener su botón particular para quitarse a sí mismo.-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<form>
+	   <input type="text" name="nombre" id="campo"><button id="eliminar">eliminar</button>
+
+	 </form><br>
+		<button id = "añadir">Añadir</button>
+        <script>
+            $(document).ready(function(){
+
+                $("#añadir").click(function(){
+									$("form").append('<br><input type="text" name="nombre"id="campo"><button id="eliminar">eliminar</button>');
+								});
+
+								$("#eliminar").click(function(){
+									$("#campo").remove();
+									$("#eliminar").remove();
+								});
+
+            });
+        </script>
+	</body>
+</html>

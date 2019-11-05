@@ -1,0 +1,28 @@
+<!-- MIGUEL ANGEL MENA ALCALDE - 2º DAW-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div id="div1">
+  			<p>Crear un elemento DIV con algunos párrafos dentro.</p>
+        <p>Al presionar sobre este div, debe ser escondido lentamente.</p>
+        <p>Y cuando está completamente oculto, otro bloque de texto debe aparecer lentamente.</p>
+		</div>
+    <div id="div2">
+        <p>Parecia que no....</p>
+        <p>Pero ha funcionado</p>
+    </div>
+        <script>
+            $(document).ready(function(){
+              $("#div2").hide();
+              $("div").click(function(){
+                $("#div1").hide();
+                $("#div2").delay(1).show();
+               });
+            });
+        </script>
+	</body>
+</html>

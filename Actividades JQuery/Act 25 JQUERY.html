@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <p>	a) Write a Javascript script that uses 2 input text controls to enter the value of the 2 operands and 4 different buttons to perform
+    	the 4 basic arithmetic operations (addition, substraction, product and division).The data (2 operands and 1 operation) is sent to the server
+    	where the corresponding operation is calculated and returned using $.post or $.get function. The result is shown in a div.</p>
+    <input type="text" id="val1">
+    <input type="text" id="val2"><br>
+    <div id ='resultado'></div><br>
+    <button type="button" id="addition">Addition</button>
+    <button type="button" id="substraction">Substraction</button><br>
+    <button type="button" id="product">Product</button>
+    <button type="button" id="division">Division</button>
+    <script>
+    $(document).ready(function(){
+
+      $("#addition").click(function(){
+        var resul = parseInt($("#val1").val())+parseInt($("#val2").val());
+          $("#resultado").text(resul);
+        });
+
+      $("#substraction").click(function(){
+        var resul = parseInt($("#val1").val())-parseInt($("#val2").val());
+        $("#resultado").text(resul);
+      });
+
+      $("#product").click(function(){
+        var resul = parseInt($("#val1").val())*parseInt($("#val2").val());
+        $("#resultado").text(resul);
+      });
+
+      $("#division").click(function(){
+        var resul = parseInt($("#val1").val())/parseInt($("#val2").val());
+        $("#resultado").text(resul);
+      });
+
+      });
+    </script>
+  </body>
+</html>
