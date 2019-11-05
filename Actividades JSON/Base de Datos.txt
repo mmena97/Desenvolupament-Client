@@ -1,0 +1,28 @@
+create database if not exists dc;
+
+use dc;
+
+create table if not exists treballs (
+	id int primary key not null auto_increment, 
+	nombre varchar(255)
+);
+
+create table if not exists personas (
+	nombre varchar(255),
+    	treball int,
+    	horari varchar(255),
+    	email varchar(255),
+    	foreign key (treball) references treballs(id)
+);
+
+insert into treballs(nombre) values('Arquitecto');
+insert into treballs(nombre) values('Albañil');
+insert into treballs(nombre) values('Fontanero');
+insert into treballs(nombre) values('Profesor');
+insert into treballs(nombre) values('Musico');
+
+insert into personas values('Miguel Angel',1,'07/17','mena_alcalde@hotmail.com');
+insert into personas values('Juana',1,'13/19','juana_alr@gmail.com');
+insert into personas values('Carlos',4,'11/22','car134@gmail.com');
+insert into personas values('Laura',4,'11/22','lau_han@hotmail.com');
+insert into personas values('Antonio',4,'09/20','antonito@hotmail.com');
