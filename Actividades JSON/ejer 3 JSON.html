@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <b>Treballs  </b><select id="desplegableTreballs""></select>
+    <b>Personas  </b><select id="desplegablePersonas"></select>
+    <script>
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              var myObj = JSON.parse(this.responseText);
+              var datos =  "";
+              for(x in myObj.treballs){
+                datos+= "<option value="+myObj.treballs[x].id+">"+myObj.treballs[x].name+"</option>";
+              }
+              document.getElementById("desplegableTreballs").innerHTML = datos;
+          }
+      };
+      xmlhttp.open("GET", "treballs.json", true);
+      xmlhttp.send();
+      function desplegarPersonas(){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var myObj = JSON.parse(this.responseText);
+                var datosPersonas =  "";
+                for(x in myObj.personas){
+                  if (document.getElementById("desplegableTreballs").value==myObj.personas[x].trabajo) {
+                    datosPersonas+= "<option>"+myObj.personas[x].nombre+"</option>";
+                  }
+                }
+                document.getElementById("desplegablePersonas").innerHTML = datosPersonas;
+            }
+        };
+        xmlhttp.open("GET", "personas.json", true);
+        xmlhttp.send();
+      }
+
+      $(document).ready(function(){
+        $('#desplegableTreballs').change(function(){
+          desplegarPersonas()
+        });
+      });
+    </script>
+  </body>
+</html>

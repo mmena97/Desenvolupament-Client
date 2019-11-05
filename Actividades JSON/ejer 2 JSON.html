@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <b>Treballs  </b><select id="desplegable"">
+    </select>
+    <script>
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              var myObj = JSON.parse(this.responseText);
+              var datos =  "";
+              for(x in myObj.treballs){
+                datos+= "<option value="+myObj.treballs[x].id+">"+myObj.treballs[x].name+"</option>";
+              }
+              document.getElementById("desplegable").innerHTML = datos;
+          }
+      };
+      xmlhttp.open("GET", "treballs.json", true);
+      xmlhttp.send();
+    </script>
+  </body>
+</html>

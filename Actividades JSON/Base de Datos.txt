@@ -3,7 +3,7 @@ create database if not exists dc;
 use dc;
 
 create table if not exists treballs (
-	id int primary key not null auto_increment, 
+	id int primary key not null auto_increment,
 	nombre varchar(255)
 );
 

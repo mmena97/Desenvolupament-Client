@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  </head>
+  <body>
+    <table class="table table-bordered table-responsive" >
+      <thead class="thead-dark">
+          <th>Nombre</th>
+          <th>ID Trabajo</th>
+          <th>Horario</th>
+          <th>email</th>
+      </thead>
+      <tbody id="tablaPersonas">
+        <tr>
+          <td>1</td>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>21</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+              var myObj = JSON.parse(this.responseText);
+              var datosPersonas =  "";
+              for(x in myObj.personas){
+                  datosPersonas+= "<tr><td>"+myObj.personas[x].nombre+"</td><td>"+myObj.personas[x].trabajo+
+                  "</td><td>"+myObj.personas[x].horario+"</td><td>"+myObj.personas[x].email+"</td><tr>";
+              }
+              document.getElementById("tablaPersonas").innerHTML = datosPersonas;
+          }
+      };
+      xmlhttp.open("GET", "personas.json", true);
+      xmlhttp.send();
+    </script>
+  </body>
+</html>

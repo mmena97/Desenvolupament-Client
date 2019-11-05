@@ -1,0 +1,24 @@
+{
+  "treballs":[
+    {
+      "id":1,
+      "name":"Arquitecto"
+    },
+    {
+      "id":2,
+      "name":"Albañil"
+    },
+    {
+      "id":3,
+      "name":"Fontanero"
+    },
+    {
+      "id":4,
+      "name":"Profesor"
+    },
+    {
+      "id":5,
+      "name":"Musico"
+    }
+  ]
+}
