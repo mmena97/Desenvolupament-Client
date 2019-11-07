@@ -8,18 +8,22 @@
     <b>Treballs  </b><select id="desplegable">
     </select>
     <script>
+      obj = { "table":"treballs"};
+      dbParam = JSON.stringify(obj);
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
               var myObj = JSON.parse(this.responseText);
+              console.log(myObj);
               var datos =  "";
-              for(x in myObj.treballs){
-                datos+= "<option value="+myObj.treballs[x].id+">"+myObj.treballs[x].name+"</option>";
+              for(x in myObj){
+                console.log(myObj[x].id)
+                datos+= "<option value="+myObj[x].id+">"+myObj[x].nombre+"</option>";
               }
               document.getElementById("desplegable").innerHTML = datos;
           }
       };
-      xmlhttp.open("GET", "treballs.json", true);
+      xmlhttp.open("GET", "treballs.php?x=" + dbParam, true);
       xmlhttp.send();
     </script>
   </body>

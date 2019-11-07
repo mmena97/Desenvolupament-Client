@@ -1,0 +1,22 @@
+{
+  "photos":[
+    {
+      "id":1,
+      "name":"Mediterraneo",
+      "description":"Menudas vistas...",
+      "src": "img1.jpg"
+    },
+    {
+      "id":2,
+      "name":"Coque de fuerzas",
+      "description":"La fuerza de la naturaleza en todo su esplendor",
+      "src": "img2.jpg"
+    },
+    {
+      "id":3,
+      "name":"Lago",
+      "description":"Pues eso un lago",
+      "src": "img3.jpg"
+    }
+  ]
+}

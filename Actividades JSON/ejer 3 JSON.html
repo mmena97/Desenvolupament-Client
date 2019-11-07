@@ -8,38 +8,43 @@
     <b>Treballs  </b><select id="desplegableTreballs"></select>
     <b>Personas  </b><select id="desplegablePersonas"></select>
     <script>
-      var xmlhttp = new XMLHttpRequest();
-      xmlhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-              var myObj = JSON.parse(this.responseText);
-              var datos =  "";
-              for(x in myObj.treballs){
-                datos+= "<option value="+myObj.treballs[x].id+">"+myObj.treballs[x].name+"</option>";
-              }
-              document.getElementById("desplegableTreballs").innerHTML = datos;
-          }
-      };
-      xmlhttp.open("GET", "treballs.json", true);
-      xmlhttp.send();
+    obj = { "table":"treballs"};
+    dbParam = JSON.stringify(obj);
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+            var datos =  "";
+            for(x in myObj){
+              datos+= "<option value="+myObj[x].id+">"+myObj[x].nombre+"</option>";
+            }
+            document.getElementById("desplegableTreballs").innerHTML = datos;
+        }
+    };
+    xmlhttp.open("GET", "treballs.php?x=" + dbParam, true);
+    xmlhttp.send();
       function desplegarPersonas(){
+        obj = {"table":"personas"};
+        dbParam = JSON.stringify(obj);
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var myObj = JSON.parse(this.responseText);
                 var datosPersonas =  "";
-                for(x in myObj.personas){
-                  if (document.getElementById("desplegableTreballs").value==myObj.personas[x].trabajo) {
-                    datosPersonas+= "<option>"+myObj.personas[x].nombre+"</option>";
+                for(x in myObj){
+                  if (document.getElementById("desplegableTreballs").value==myObj[x].treball) {
+                    datosPersonas+= "<option>"+myObj[x].nombre+"</option>";
                   }
                 }
                 document.getElementById("desplegablePersonas").innerHTML = datosPersonas;
             }
         };
-        xmlhttp.open("GET", "personas.json", true);
+        xmlhttp.open("GET", "personas.php?x=" + dbParam, true);
         xmlhttp.send();
       }
 
       $(document).ready(function(){
+        desplegarPersonas()
         $('#desplegableTreballs').change(function(){
           desplegarPersonas()
         });
