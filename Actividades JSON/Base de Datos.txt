@@ -26,3 +26,16 @@ insert into personas values('Juana',1,'13/19','juana_alr@gmail.com');
 insert into personas values('Carlos',4,'11/22','car134@gmail.com');
 insert into personas values('Laura',4,'11/22','lau_han@hotmail.com');
 insert into personas values('Antonio',4,'09/20','antonito@hotmail.com');
+
+create table if not exists services (
+    id int,
+	nombre varchar(255),
+    descripcion varchar(255),
+    imagen varchar(255)
+);
+
+insert into services values(1,'Fontanero','Creo que no hace falta exsplicarlo','img1.jpg');
+insert into services values(2,'Musico','Toca alugn instrumento o canta...','img2.jpg');
+insert into services values(3,'Profesor','Enseña cosas a gente','img3.jpg');
+insert into services values(4,'Paseador de Perros','Pues eso pasea perros','img4.jpg');
+
