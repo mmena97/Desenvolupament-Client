@@ -1,0 +1,44 @@
+<PERSONAS>
+  <PERSONA>
+    <NOMBRE>Miguel Angel</NOMBRE>
+    <ROLES>Programador</ROLES>
+    <HORARIO>07/17</HORARIO>
+    <EMAIL>mena_alcalde@hotmail.com</EMAIL>
+  </PERSONA>
+  <PERSONA>
+    <NOMBRE>Juana</NOMBRE>
+    <ROLES>Programador</ROLES>
+    <HORARIO>13/19</HORARIO>
+    <EMAIL>juana_alr@gmail.com</EMAIL>
+  </PERSONA>
+  <PERSONA>
+    <NOMBRE>Carlos</NOMBRE>
+    <ROLES>Enfermero</ROLES>
+    <HORARIO>11/22</HORARIO>
+    <EMAIL>car134@gmail.com</EMAIL>
+  </PERSONA>
+  <PERSONA>
+    <NOMBRE>Laura</NOMBRE>
+    <ROLES>Arquitecto</ROLES>
+    <HORARIO>11/22</HORARIO>
+    <EMAIL>lau_han@hotmail.com</EMAIL>
+  </PERSONA>
+  <PERSONA>
+    <NOMBRE>Antonio</NOMBRE>
+    <ROLES>Arquitecto</ROLES>
+    <HORARIO>09/20</HORARIO>
+    <EMAIL>antonito@hotmail.com</EMAIL>
+  </PERSONA>
+  <PERSONA>
+    <NOMBRE>Josue</NOMBRE>
+    <ROLES>Enfermero</ROLES>
+    <HORARIO>13/19</HORARIO>
+    <EMAIL>josuep@hotmail.com</EMAIL>
+  </PERSONA>
+  <PERSONA>
+    <NOMBRE>Juana</NOMBRE>
+    <ROLES>Arquitecto</ROLES>
+    <HORARIO>11/22</HORARIO>
+    <EMAIL>juanita24@hotmail.com</EMAIL>
+  </PERSONA>
+</PERSONAS>

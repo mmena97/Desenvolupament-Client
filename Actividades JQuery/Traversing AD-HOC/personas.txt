@@ -1,0 +1,7 @@
+Miguel Angel,Programador,07/17,mena_alcalde@hotmail.com
+Juana,Programador,13/19,juana_alr@gmail.com
+Carlos,Enfermero,11/22,car134@gmail.com
+Laura,Arquitecto,11/22,lau_han@hotmail.com
+Antonio,Arquitecto,09/20,antonito@hotmail.com
+Josue,Enfermero,13/19,josuep@hotmail.com
+Juana,Arquitecto,11/22,juanita24@hotmail.com

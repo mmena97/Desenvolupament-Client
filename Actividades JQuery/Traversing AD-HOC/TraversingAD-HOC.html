@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+  <!--////////////////////////////////////////////////////////TEXT//////////////////////////////////////////////////////////////////--->
+  <h1>TXT</h1>
+  <b>ROLES</b>
+  <select id="roles">
+    <option value="Programador">Programador</option>
+    <option value="Enfermero">Enfermero</option>
+    <option value="Arquitecto">Arquitecto</option>
+  </select>
+  <button onclick="loadTxt()">LOAD</button><p>
+    <div id ="resultadoTxt"></div>
+    <script>
+    function loadTxt() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        var contador = 0;
+        var personas = "";
+        var eleccion = document.getElementById("roles");
+        var seleccion = eleccion.options[eleccion.selectedIndex].value;
+        if (this.readyState == 4 && this.status == 200) {
+          var datosTxt = this.responseText.split(/\n/);
+          for (x in datosTxt) {
+            if(datosTxt[x].includes(seleccion)){
+              personas+=datosTxt[x]+"<br>";
+            }
+          }
+        }
+        document.getElementById("resultadoTxt").innerHTML = personas;
+      };
+      xhttp.open("GET", "personas.txt", true);
+      xhttp.send();
+    }
+    </script>
+    <!--////////////////////////////////////////////////////////XML//////////////////////////////////////////////////////////////////--->
+    <h1>XML</h1>
+    <b>EMAIL </b>
+    <input type="text" id="textoXml"></input>
+    <button onclick="loadXml()">LOAD</button><p>
+      <div id ="resultadoXml"></div>
+      <script>
+      function loadXml(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var xmlDoc = this.responseXML;
+            var nombres = "";
+            var nombre = xmlDoc.getElementsByTagName("NOMBRE");
+            var email = xmlDoc.getElementsByTagName("EMAIL");
+            for (var i = 0; i < email.length; i++) {
+              if(email[i].childNodes[0].nodeValue==document.getElementById("textoXml").value){
+                nombres += nombre[i].childNodes[0].nodeValue + "<br>";
+              }
+            }
+            document.getElementById("resultadoXml").innerHTML = nombres;
+          }
+        };
+        xhttp.open("GET", "personas.xml", true);
+        xhttp.send();
+      }
+      </script>
+      <!--////////////////////////////////////////////////////////PHP//////////////////////////////////////////////////////////////////--->
+      <h1>PHP</h1>
+      <b>EMAIL </b>
+      <input type="text" id="textoPhp"></input><br>
+      <button onclick="loadGetPhp()">LOAD GET</button><button onclick="loadPostPhp()">LOAD POST</button><p>
+        <div id ="resultadoPHP"></div>
+        <script>
+        function loadGetPhp() {
+          var xhttp;
+          xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("resultadoPHP").innerHTML = this.responseText;
+            }
+          };
+          xhttp.open("GET", "personas.php?q="+document.getElementById("textoPhp").value, true);
+          xhttp.send();
+        }
+        function loadPostPhp() {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("resultadoPHP").innerHTML = this.responseText;
+            }
+          };
+          xhttp.open("POST", "personas.php", true);
+          xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+          xhttp.send("q="+document.getElementById("textoPhp").value);
+        }
+        </script>
+      </body>
+      </html>
