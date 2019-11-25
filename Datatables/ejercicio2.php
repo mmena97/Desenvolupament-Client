@@ -13,6 +13,8 @@
   <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
   <script src="https://cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
+  </div>
+</div>
 </head>
 <body>
 <div class="container">
@@ -34,7 +36,7 @@
   <script>
 
   $(document).ready(function() {
-      var t = $('#taula').DataTable( {
+        $('#taula').DataTable( {
           ajax: {
              url: 'offer.php',
              dataSrc: '',
@@ -46,10 +48,21 @@
            { data: 'Coin_Price' }
           ],
         language: {
+            <?php if(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "es"):?>
                   url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+            <?php elseif(substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "ca"):?>
+                  url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/Catalan.json"
+            <?php else :?>
+                  url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
+            <?php endif ?>
               },
           select: true
+      });
+
+      $('#myTable').DataTable( {
+        select: false
       } );
+
     });
   </script>
 </body>
