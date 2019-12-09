@@ -3,7 +3,7 @@
   header("Content-Type: application/json; charset=UTF-8");
   $obj = json_decode($_GET["x"],false);
 
-  $conn = new mysqli("127.0.0.1","root","","dc");
+  $conn = new mysqli("127.0.0.1","mena","123","dc");
 
   $result = $conn->query("SELECT * FROM ".$obj->table);
   $outp = array();

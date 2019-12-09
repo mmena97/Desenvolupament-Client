@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <title>Log In</title>
+
+    <style type="text/css">
+
+      form {
+        padding: 20px;
+      }
+
+      .col-center{
+        float: none;
+        margin: 0 auto;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div class="container pt-4">
+      <div class="col-center col-6 border shadow">
+        <div class="form-group p-4">
+          <label>Usuario</label>
+          <input class="form-control" placeholder="Introduzca su usuario" id="user"></input>
+        </div>
+        <div class="form-group p-4">
+          <label>Password</label>
+          <input class="form-control" type="Password" placeholder="Password" id="pswrd"></input>
+        </div>
+        <button class="btn btn-primary mr-4" id="comprobacion">Enviar</button>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+
+      $(document).ready(function(){
+        $("#comprobacion").click(function(){
+
+          console.log("hola");
+
+          var name = $("#user").val;
+          console.log(name);
+
+          if ( name.length < 5 ){
+            alert("Usuario demasiado corto")
+          }
+
+          var pswd = $("#pswrd").val;
+          console.log(pswd);
+
+          if ( pswd.length < 5 ){
+            alert("Contraseña demasiado corta")
+          }else if( pswd.indexOf("\D\W") ){
+            alert("BIEN")
+          }
+        });
+      });
+
+    </script>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

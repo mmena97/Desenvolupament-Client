@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Leaflet</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="   crossorigin=""></script
+  </head>
+  <body>
+    <div id="miMapa" style="width:800px;height:350px;"></div>
+    <script>
+
+      // COORDENADAS
+      var iesManacor = [39.5616104,3.200250];
+      var botiga 	 = [39.563577,3.202717];
+
+      var mapa = L.map('miMapa').setView([39.561610,3.202717],15);
+
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWVuYTE3IiwiYSI6ImNrM3d2MTBtcDA1eTEzbXA2aDdpcTczbTcifQ.6tRgcKvlXapL67ZddfhbnA', {
+    	    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    	    maxZoom: 20,
+    	    id: 'mapbox.light',
+    	}).addTo(mapa);
+
+      //ICONOS
+      var iconoBotiga = L.icon({
+      	    iconUrl: 'botiga.png',
+      	    iconSize:     [22,18],
+      	    popupAnchor:  [-3, -76]
+      });
+
+      var iconoInstituto = L.icon({
+            iconUrl: 'escuela.png',
+            iconSize:     [30,25],
+            popupAnchor:  [-3, -76]
+      });
+
+      // MARCADORES
+      var botiga = L.marker([39.563577,3.202717], {icon: iconoBotiga}).addTo(mapa);
+      var instituto = L.marker([39.5616104,3.200250], {icon: iconoInstituto}).addTo(mapa);
+
+      //CIRCULO AREA
+      var circulo = L.circle([39.562617, 3.201503], {
+          color: 'blue',
+          fillColor: 'blue',
+          fillOpacity: 0.2,
+          radius: 250
+      }).addTo(mapa);
+
+      //POPUP
+      instituto.bindPopup("Estudio Aqui");
+
+    </script>
+  </body>
+</html>

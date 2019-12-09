@@ -22,7 +22,6 @@
           var xmlhttp = new XMLHttpRequest();
           xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-              //$("#demo").html(this.responseText);
               var servicios = JSON.parse(this.responseText);
               var i=0;
               for (servicio in servicios) {
