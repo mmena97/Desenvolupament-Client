@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="demo"></div>
+    </select>
+    <script>
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+            var datos =  "";
+            for(x in myObj){
+              for(y in myObj[x]){
+                console.log(myObj[x][y].name)
+                datos+= "<ul>ID : "+myObj[x][y].id+"- Nombre  :"+myObj[x][y].name+"</ul>";
+              }
+            }
+          document.getElementById("demo").innerHTML = datos;
+        }
+    };
+    xmlhttp.open("GET", "treballs.json", true);
+    xmlhttp.send();
+
+    </script>
+  </body>
+</html>
