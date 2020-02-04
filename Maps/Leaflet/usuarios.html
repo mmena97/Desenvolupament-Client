@@ -14,7 +14,7 @@
   <body>
     <div id="miMapa" style="width:950px;height:400px;"></div>
     <script>
-    // -----------------------------------------------------------
+    // ---------------------------------------------------------
           obj = { "table":"lugares"};
           dbParam = JSON.stringify(obj);
           var xmlhttp = new XMLHttpRequest();
@@ -22,14 +22,12 @@
               if (this.readyState == 4 && this.status == 200) {
                   var myObj = JSON.parse(this.responseText);
                   for(x in myObj){
-                    var marcador = L.marker([myObj[x].longitud,myObj[x].latitud]).addTo(mapa);
+                    var marcador = L.marker([myObj[x].longitud,myObj[x].latitud]).addTo(mapa).bindPopup("<b>"+a+"</b>");
                   }
               }
           };
           xmlhttp.open("GET", "lugares.php?x=" + dbParam, true);
           xmlhttp.send();
-
-
 
     // -----------------------------------------------------------
       // COORDENADAS

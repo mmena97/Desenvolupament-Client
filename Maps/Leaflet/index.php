@@ -22,13 +22,13 @@
               if (this.readyState == 4 && this.status == 200) {
                   var myObj = JSON.parse(this.responseText);
                   for(x in myObj){
-                   var circulo = L.circle([myObj[x].longitud,myObj[x].latitud], {
+                   var circulo = L.circle([myObj[x].longitud,myObj[x].latitud],{
                        color: 'red',
                        opacity: 0,
                        fillColor: 'red',
                        fillOpacity: 0.2,
-                       radius: 3500
-                   }).addTo(mapa);
+                       radius: 3000
+                   }).addTo(mapa).addTo(mapa).bindPopup("<b>"+myObj[x].nombre+"</b>");
                   }
               }
           };
@@ -49,6 +49,21 @@
     	    id: 'mapbox.light',
           accessToken: 'pk.eyJ1IjoibWVuYTciLCJhIjoiY2szeThhZHUyMGlwNDNscDZoYmc1ZnMweiJ9.lTy9NAE_I_tyg7Xt04pihw'
     	}).addTo(mapa);
+
+      //ICONOS
+      var iconoBotiga = L.icon({
+            iconUrl: 'botiga.png',
+            iconSize:     [22,18],
+            popupAnchor:  [-3, -76]
+      });
+
+      var iconoInstituto = L.icon({
+            iconUrl: 'escuela.png',
+            iconSize:     [30,25],
+            popupAnchor:  [-3, -76]
+      });
+
+      var botiga = L.marker([39.7186751000,2.9058837800], {icon: iconoBotiga}).addTo(mapa);
 
     </script>
   </body>

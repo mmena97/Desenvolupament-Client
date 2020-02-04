@@ -1,0 +1,19 @@
+{
+    "lugares": [
+        {
+          "nombre" : "Manacor",
+          "longitude" : 3.20142,
+          "latitude" :   39.57434
+        },
+        {
+          "nombre" : "Palma",
+          "longitude" :  2.6474500,
+          "latitude" :  39.5695100
+        },
+        {
+          "nombre" : "Inca",
+          "longitude" :  2.90588378,
+          "latitude" :  39.7186751
+        }
+    ]
+}
